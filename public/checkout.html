@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f4e9">
+  <title>Finalizar pedido | Estonado Carioca</title>
+  <link rel="icon" href="/assets/mark.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/store.mjs"></script>
+</head>
+<body data-page="checkout">
+  <div class="shipping-bar">✦ &nbsp; Frete grátis em todos os pedidos &nbsp; ✦</div>
+  <header class="header checkout-header">
+    <a href="/#colecao">Voltar à coleção</a>
+    <a class="logo" href="/" aria-label="Estonado Carioca, início"><img class="brand-sun" src="/assets/mark.png" alt="" width="42" height="42"><span>Estonado<em>Carioca</em></span></a>
+  </header>
+  <main class="checkout">
+    <h1>Finalizar pedido</h1>
+    <div id="checkout-empty" hidden><p>Sua sacola está vazia.</p><a class="button" href="/#colecao">Ver coleção</a></div>
+    <div id="checkout-layout" class="checkout-layout" hidden>
+      <form id="checkout-form" method="post" autocomplete="on">
+        <div class="checkout-steps" aria-label="Etapas da compra"><span id="delivery-label" aria-current="step">1. Entrega</span><span id="payment-label">2. Pagamento</span></div>
+        <div id="delivery-step">
+        <fieldset id="delivery-fields"><legend>Dados de entrega</legend>
+        <div class="fields">
+          <label>Nome completo<input name="name" autocomplete="name" required minlength="3" maxlength="64"></label>
+          <label>E-mail<input name="email" type="email" autocomplete="email" required maxlength="64"></label>
+          <label>CPF<input name="document" inputmode="numeric" pattern="[0-9.\-]{11,14}" maxlength="14" required></label>
+          <label>Celular com DDD<input type="tel" name="phone" autocomplete="tel-national" inputmode="tel" maxlength="20" required></label>
+        </div>
+        <h2 class="field-heading">Endereço</h2><div class="fields">
+          <label>CEP<input name="zip" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" maxlength="9" required></label>
+          <label>Número<input name="number" maxlength="15" required></label>
+          <label class="full">Rua ou avenida<input name="street" autocomplete="address-line1" maxlength="75" required></label>
+          <label>Bairro<input name="neighborhood" maxlength="55" required></label>
+          <label>Complemento <small>opcional</small><input name="complement" autocomplete="address-line2" maxlength="50"></label>
+          <label>Cidade<input name="city" autocomplete="address-level2" maxlength="60" required></label>
+          <label>UF<select name="state" autocomplete="address-level1" id="states" required><option value="">Selecione</option></select></label>
+        </div></fieldset>
+        <fieldset id="shipping-fields"><legend>Frete</legend>
+          <label class="checkbox"><input type="radio" name="shippingMethod" value="sedex" required> SEDEX · Grátis</label>
+          <p class="muted" id="shipping-deadline">Prazo de entrega em configuração.</p>
+        </fieldset>
+        <button class="button pay" id="continue-to-payment" type="button">Continuar para pagamento</button>
+        </div>
+        <div id="payment-step" hidden>
+        <div class="review"><h2 id="review-heading" tabindex="-1">Confira a entrega</h2><p id="delivery-review"></p><button class="text-button" id="edit-delivery" type="button">Editar e-mail, endereço ou frete</button></div>
+        <fieldset id="card-fields" disabled><legend>Cartão de crédito</legend>
+          <p class="muted">Pagamento processado pela Pagar.me.</p>
+          <div class="fields">
+            <label class="full">Nome impresso no cartão<input id="holder" autocomplete="cc-name" maxlength="64" required></label>
+            <label class="full">Número do cartão<input id="card-number" autocomplete="cc-number" inputmode="numeric" maxlength="23" required></label>
+            <label>Validade<input id="expiry" autocomplete="cc-exp" placeholder="MM/AA" inputmode="numeric" maxlength="5" required></label>
+            <label>Código de segurança<input id="cvv" autocomplete="cc-csc" inputmode="numeric" maxlength="4" required></label>
+          </div>
+          <label class="checkbox"><input type="checkbox" id="different-billing" aria-controls="billing-fields"> Usar outro endereço de cobrança</label>
+          <div id="billing-fields" class="fields" hidden></div>
+        </fieldset>
+        <label class="installments">Parcelamento<select id="installments" name="installments" required></select></label>
+        <div class="review"><h2>Condições da compra</h2>
+          <p>Confira os itens, o endereço, o prazo de entrega e o total antes de pagar. Você pode desistir da compra em até 7 dias corridos após o recebimento, sem custo.</p>
+          <p><a href="/atendimento#termos" target="_blank" rel="noopener">Termos de compra e uso</a> · <a href="/atendimento#privacidade" target="_blank" rel="noopener">Política de privacidade</a></p>
+          <label class="checkbox"><input type="checkbox" name="terms" required> Li e aceito os termos de compra.</label>
+        </div>
+        <p id="checkout-message" class="checkout-message" role="status" tabindex="-1">Verificando a disponibilidade do pagamento…</p>
+        <button class="button pay" id="pay" disabled>Pagar com cartão</button>
+        </div>
+      </form>
+      <aside class="order-summary" aria-labelledby="summary-title"><h2 id="summary-title">Seu pedido</h2><div id="checkout-items" class="item-list"></div><div id="checkout-total"></div></aside>
+    </div>
+    <section id="checkout-result" class="result" tabindex="-1" hidden></section>
+  </main>
+  <footer><a class="logo" href="/" aria-label="Estonado Carioca, início"><img class="brand-sun" src="/assets/mark.png" alt="" width="42" height="42"><span>Estonado<em>Carioca</em></span></a><nav class="footer-links" aria-label="Ajuda"><a href="/atendimento">Atendimento e dúvidas</a><a href="/atendimento#trocas">Trocas e devoluções</a><a href="/atendimento#termos">Termos</a><a href="/atendimento#privacidade">Privacidade</a></nav><div class="merchant-info" data-merchant></div></footer>
+</body>
+</html>

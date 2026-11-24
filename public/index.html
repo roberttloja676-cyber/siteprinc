@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f4e9">
+  <meta name="description" content="Estonado Carioca. Vestidos, conjuntos e macacões com frete grátis.">
+  <title>Estonado Carioca | Moda feminina</title>
+  <link rel="icon" href="/assets/mark.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/store.mjs"></script>
+</head>
+<body data-page="store">
+  <div class="shipping-bar">✦ &nbsp; Frete grátis em todos os pedidos &nbsp; ✦</div>
+  <header class="header">
+    <nav aria-label="Categorias da loja"><a href="#colecao" data-select="Vestidos">Vestidos</a><a href="#colecao" data-select="Conjuntos">Conjuntos</a><a href="#colecao" data-select="Macacões">Macacões</a></nav>
+    <a class="logo" href="/" aria-label="Estonado Carioca, início"><img class="brand-sun" src="/assets/mark.png" alt="" width="42" height="42"><span>Estonado<em>Carioca</em></span></a>
+    <button class="bag" type="button" aria-haspopup="dialog" id="open-bag">Sacola <span id="bag-count">0</span></button>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img src="/assets/hero.jpg" alt="" fetchpriority="high">
+      <div class="hero-inner">
+        <p class="eyebrow">MODA FEMININA CARIOCA</p>
+        <h1 id="hero-title">Vista o sol.<br><em>Leve o Rio.</em></h1>
+        <p>Vestidos, conjuntos e macacões para dias de sol.<br class="desktop"> O frete é por nossa conta.</p>
+        <a class="button light" href="#colecao">Ver coleção</a>
+      </div>
+    </section>
+    <section id="colecao" class="collection" aria-labelledby="collection-title">
+      <div class="collection-head">
+        <h2 id="collection-title">A coleção</h2>
+        <div class="filters" aria-label="Filtrar a coleção">
+          <button type="button" data-filter="Todos" aria-pressed="true">Todas as peças</button>
+          <button type="button" data-filter="Vestidos" aria-pressed="false">Vestidos</button>
+          <button type="button" data-filter="Conjuntos" aria-pressed="false">Conjuntos</button>
+          <button type="button" data-filter="Macacões" aria-pressed="false">Macacões</button>
+        </div>
+      </div>
+      <div class="product-grid" id="products"></div>
+    </section>
+  </main>
+  <footer><a class="logo" href="/" aria-label="Estonado Carioca, início"><img class="brand-sun" src="/assets/mark.png" alt="" width="42" height="42"><span>Estonado<em>Carioca</em></span></a><nav class="footer-links" aria-label="Ajuda"><a href="/atendimento">Atendimento e dúvidas</a><a href="/atendimento#entrega">Entrega</a><a href="/atendimento#trocas">Trocas e devoluções</a><a href="/atendimento#termos">Termos</a><a href="/atendimento#privacidade">Privacidade</a><a href="https://www.instagram.com/estonadocarioca/" target="_blank" rel="noopener">Instagram</a></nav><div class="merchant-info" data-merchant></div></footer>
+  <dialog class="bag-dialog" id="bag" aria-labelledby="bag-title">
+    <div class="bag-head"><h2 id="bag-title">Sua sacola</h2><form method="dialog"><button class="close" aria-label="Fechar sacola">×</button></form></div>
+    <div id="bag-items" class="item-list"></div>
+    <div id="bag-summary"></div>
+  </dialog>
+  <p id="announcement" class="visually-hidden" aria-live="polite"></p>
+</body>
+</html>

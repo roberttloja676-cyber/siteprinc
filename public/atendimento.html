@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f4e9">
+  <title>Atendimento e políticas | Estonado Carioca</title>
+  <link rel="icon" href="/assets/mark.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/store.mjs"></script>
+</head>
+<body data-page="support">
+  <div class="shipping-bar">✦ &nbsp; Frete grátis em todos os pedidos &nbsp; ✦</div>
+  <header class="header checkout-header">
+    <a href="/#colecao">Voltar à coleção</a>
+    <a class="logo" href="/" aria-label="Estonado Carioca, início"><img class="brand-sun" src="/assets/mark.png" alt="" width="42" height="42"><span>Estonado<em>Carioca</em></span></a>
+  </header>
+  <main class="checkout policy">
+    <h1>Atendimento e políticas</h1>
+    <nav class="footer-links" aria-label="Nesta página">
+      <a href="#contato">Contato</a><a href="#duvidas">Dúvidas frequentes</a><a href="#entrega">Entrega</a><a href="#trocas">Trocas e devoluções</a><a href="#termos">Termos de compra e uso</a><a href="#privacidade">Privacidade e cookies</a>
+    </nav>
+    <section id="contato">
+      <h2>Fale com a loja</h2>
+      <div data-merchant></div>
+      <p>Use o formulário para pedir informações, acompanhar pedidos, registrar reclamações, pedir trocas ou exercer o direito de arrependimento. Guarde o protocolo exibido após o envio. O atendimento responde em até cinco dias.</p>
+      <form id="support-form" method="post">
+        <div class="fields">
+          <label>Seu e-mail para resposta<input name="email" type="email" autocomplete="email" maxlength="150" required></label>
+          <label>Assunto<select name="topic" id="support-topic" required><option value="">Selecione</option><option value="duvida">Informação ou dúvida</option><option value="entrega">Entrega ou rastreio</option><option value="troca">Troca ou defeito</option><option value="arrependimento">Desistência em até 7 dias</option><option value="cancelamento">Suspensão ou cancelamento</option><option value="reclamacao">Reclamação</option><option value="privacidade">Direitos de privacidade</option></select></label>
+          <label>Número do pedido <small>se tiver</small><input name="order" maxlength="52"></label>
+          <label class="full">Mensagem<textarea name="message" maxlength="2000" required></textarea></label>
+        </div>
+        <p class="muted">Evite informar dados de cartão, senhas ou documentos na mensagem.</p>
+        <button class="button" id="send-support" disabled>Enviar solicitação</button>
+        <p id="support-status" role="status" tabindex="-1"></p>
+      </form>
+    </section>
+    <section id="duvidas">
+      <h2>Dúvidas frequentes</h2>
+      <details><summary>Preciso criar uma conta?</summary><p>Você compra como visitante. Informe os dados de contato e entrega para receber seu pedido.</p></details>
+      <details><summary>Quais são as formas de pagamento?</summary><p>Cartão de crédito em 1, 2 ou 3 parcelas, pela Pagar.me. O valor total e as parcelas aparecem antes da confirmação.</p></details>
+      <details><summary>Como acompanho o pedido?</summary><p>Guarde o número do pedido exibido no checkout. Solicite atualizações ou o código de rastreio pelo atendimento.</p></details>
+      <details><summary>Como corrijo meu endereço?</summary><p>No checkout, volte à etapa de entrega para editar os dados. Após concluir o pedido, fale com a loja assim que possível.</p></details>
+    </section>
+    <article id="purchase-terms">
+      <section id="entrega">
+        <h2>Entrega e frete</h2>
+        <p>O envio é feito pelo SEDEX dos Correios, com frete grátis. O prazo estimado é de 3 a 7 dias corridos após a confirmação do pagamento, incluindo a preparação do pedido. Confira o endereço antes de pagar. Para acompanhar a entrega ou comunicar um atraso, informe o número do pedido no atendimento.</p>
+      </section>
+      <section id="trocas">
+        <h2>Trocas, devoluções e cancelamento</h2>
+        <h3>Direito de arrependimento</h3>
+        <p>Você pode desistir de uma compra on-line em até 7 dias corridos a partir do recebimento da peça. A devolução não tem custo e o reembolso é integral. <a href="#contato" data-topic="arrependimento">Solicite a desistência pelo formulário da loja</a>. Guarde o protocolo e aguarde as instruções de devolução. A loja comunica imediatamente o cancelamento ou estorno ao meio de pagamento.</p>
+        <h3>Peça com defeito, incorreta ou incompleta</h3>
+        <p>Informe o problema pelo atendimento para que a loja providencie a solução aplicável. Os prazos e as opções previstos no Código de Defesa do Consumidor se aplicam, inclusive para defeitos que só se manifestem mais tarde.</p>
+        <h3>Troca de tamanho ou cor</h3>
+        <p>Além dos direitos legais, consulte o atendimento para saber se há disponibilidade e quais condições se aplicam à troca solicitada.</p>
+      </section>
+      <section id="termos">
+        <h2>Termos de compra e uso</h2>
+        <p>A Estonado Carioca é a marca da loja. A identificação do fornecedor e os canais de atendimento estão no início desta página e no rodapé.</p>
+        <p>Antes de concluir a compra, confira os itens, tamanhos, quantidades, endereço e valor total. Os preços são em reais. O pagamento é feito por cartão de crédito pela Pagar.me, em até três parcelas. A aprovação depende do emissor do cartão.</p>
+        <p>A tela final informa o número e o status do pedido. Você pode salvar o comprovante com as condições da compra. Se o pedido estiver pendente, aguarde a confirmação antes de repetir a compra. Para suspender ou cancelar um pedido, use o atendimento.</p>
+        <p>Os direitos previstos no Código de Defesa do Consumidor permanecem aplicáveis.</p>
+      </section>
+    </article>
+    <section id="privacidade">
+      <h2>Política de privacidade e cookies</h2>
+      <p>O fornecedor identificado nesta página é o controlador dos dados tratados para operar a loja. Use o formulário de atendimento ou o telefone divulgado para solicitações de privacidade.</p>
+      <p>Usamos nome, e-mail, telefone, CPF, endereço e informações do pedido para concluir a compra, processar o pagamento, entregar a peça e atender solicitações. Usamos essas informações para executar a compra e atender obrigações legais. Para o atendimento, usamos o e-mail, o assunto, a mensagem e, quando fornecido, o número do pedido.</p>
+      <p>Compartilhamos com a Pagar.me os dados necessários ao pagamento e aos controles de segurança. Os dados completos do cartão vão diretamente à Pagar.me pelo navegador. A loja recebe um token temporário. Os Correios recebem os dados necessários à entrega. A hospedagem e o armazenamento tratam dados na medida necessária para operar a loja e o atendimento.</p>
+      <p>Os dados são mantidos durante a compra e o atendimento, e depois pelo prazo aplicável às obrigações fiscais, de consumo e à defesa de direitos. Encerradas as finalidades e as hipóteses legais de conservação, os dados devem ser excluídos ou anonimizados.</p>
+      <p>Você pode solicitar confirmação, acesso, correção, informação sobre compartilhamento, portabilidade, anonimização, bloqueio ou eliminação, conforme a LGPD. Quando houver tratamento baseado em consentimento, você pode revogá-lo e pedir a eliminação dos dados nas hipóteses legais. Você também pode peticionar à Autoridade Nacional de Proteção de Dados.</p>
+      <p>O navegador guarda os códigos, tamanhos e quantidades da sacola. Durante o checkout, guarda a referência técnica da tentativa de pagamento para evitar cobranças em duplicidade. A loja não usa cookies de publicidade nem rastreadores de marketing.</p>
+    </section>
+  </main>
+  <footer><a class="logo" href="/" aria-label="Estonado Carioca, início"><img class="brand-sun" src="/assets/mark.png" alt="" width="42" height="42"><span>Estonado<em>Carioca</em></span></a><a href="#contato">Atendimento ao cliente</a><div class="merchant-info" data-merchant></div></footer>
+</body>
+</html>
