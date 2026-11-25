@@ -6,7 +6,7 @@ Loja responsiva com catálogo, filtro de categorias, sacola e checkout em duas e
 
 Execute `node build.mjs` e depois `node preview.mjs`. A loja abre em http://127.0.0.1:4318.
 
-O vestido poá e o conjunto de saia usam fotos publicadas no Instagram da loja. O conjunto de short, o macacão e a campanha do banner usam fotos ilustrativas. Os tamanhos P/M/G foram adotados para a prévia e precisam ser conferidos com o estoque. Para editar o catálogo, use `public/catalog.mjs` e `public/assets/`. O HTML do banner fica em `public/index.html`.
+As fotos dos cinco vestidos, dos dois conjuntos de saia e do macacão azul vêm do Instagram da loja e têm links para as publicações originais no catálogo. O conjunto de short, o macacão chocolate e a campanha do banner usam fotos ilustrativas. Os tamanhos P/M/G foram adotados para a prévia e precisam ser conferidos com o estoque. Para editar o catálogo, use `public/catalog.mjs` e `public/assets/`. O HTML do banner fica em `public/index.html`.
 
 ## Preparação para vender
 

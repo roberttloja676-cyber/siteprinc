@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { products } from './public/catalog.mjs';
 
 const paths = {
   '/': ['index.html', 'text/html; charset=utf-8'],
@@ -10,8 +11,8 @@ const paths = {
   '/store.mjs': ['store.mjs', 'text/javascript; charset=utf-8'],
   '/assets/mark.png': ['assets/mark.png', 'image/png']
 };
-for (const name of ['hero', 'vestido', 'saia', 'short', 'macacao']) {
-  paths[`/assets/${name}.jpg`] = [`assets/${name}.jpg`, 'image/jpeg'];
+for (const route of ['/assets/hero.jpg', ...products.map(product => product.image)]) {
+  paths[route] = [route.slice(1), 'image/jpeg'];
 }
 const assets = Object.fromEntries(await Promise.all(Object.entries(paths).map(async ([route, [file, type]]) => [
   route, [type, await readFile(new URL(`./public/${file}`, import.meta.url), type.startsWith('image/') ? 'base64' : 'utf8')]
