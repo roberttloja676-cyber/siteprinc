@@ -72,6 +72,7 @@ function setupStore() {
     $('#products').innerHTML = visible.map(product => `<article class="product">
       <img src="${product.image}" alt="${product.name} em ${product.color}" width="627" height="627" loading="lazy">
       <h3>${product.name}</h3><p>${product.color}</p>
+      ${product.description ? `<p>${product.description}</p>` : ''}
       <p class="photo-note">${product.source ? `<a href="${product.source}" target="_blank" rel="noopener">Foto do Instagram</a>` : 'Foto ilustrativa'}</p>
       <p class="price">${formatPrice(product.price)}</p>
       <form data-product="${product.id}">

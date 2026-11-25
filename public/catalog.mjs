@@ -9,6 +9,31 @@ export const products = [
   { id: 'conjunto-saia-roxo', category: 'Conjuntos', name: 'Conjunto Blusa e Saia Midi', color: 'Roxo', price: 19000, image: '/assets/conjunto-saia-roxo.jpg', source: 'https://www.instagram.com/estonadocarioca/p/DejtSrvzE_7/' },
   { id: 'macacao', category: 'Macacões', name: 'Macacão Fim de Tarde', color: 'Chocolate', price: 29000, image: '/assets/macacao.jpg' },
   { id: 'macacao-azul', category: 'Macacões', name: 'Macacão de Alças', color: 'Azul-marinho', price: 29000, image: '/assets/macacao-azul.jpg', source: 'https://www.instagram.com/estonadocarioca/p/DejthtOG6KY/' },
+  {
+    id: 'camiseta-021-grafite', category: 'Camisetas', name: 'Camiseta 021 Grafite', color: 'Grafite',
+    price: 14900, image: '/assets/camiseta-021-grafite.jpg', source: 'https://www.instagram.com/estonadocarioca/',
+    description: 'Gola redonda e mangas curtas, com estampa 021 em traços claros sobre o fundo grafite.'
+  },
+  {
+    id: 'camiseta-created-in-rio', category: 'Camisetas', name: 'Camiseta Created in Rio', color: 'Coral',
+    price: 14900, image: '/assets/camiseta-created-in-rio.jpg', source: 'https://www.instagram.com/estonadocarioca/',
+    description: 'Camiseta coral de gola redonda e mangas curtas, com a frase “Created in Rio” estampada no peito.'
+  },
+  {
+    id: 'camiseta-sol-no-mar', category: 'Camisetas', name: 'Camiseta Sol no Mar', color: 'Amarelo-mostarda',
+    price: 14900, image: '/assets/camiseta-sol-no-mar.jpg', source: 'https://www.instagram.com/estonadocarioca/',
+    description: 'Gola redonda, mangas curtas e estampa circular com sol e mar em azul e amarelo.'
+  },
+  {
+    id: 'camiseta-021-montanhas', category: 'Camisetas', name: 'Camiseta 021 Montanhas', color: 'Roxo',
+    price: 14900, image: '/assets/camiseta-021-montanhas.jpg', source: 'https://www.instagram.com/estonadocarioca/',
+    description: 'Camiseta roxa de gola redonda e mangas curtas, com montanhas em traço fino e o número 021.'
+  },
+  {
+    id: 'camiseta-coqueiros', category: 'Camisetas', name: 'Camiseta Coqueiros', color: 'Azul-royal',
+    price: 14900, image: '/assets/camiseta-coqueiros.jpg', source: 'https://www.instagram.com/estonadocarioca/',
+    description: 'Camiseta azul de gola redonda e mangas curtas, com coqueiros em preto sobre uma estampa clara.'
+  },
 ];
 
 export const sizes = ['P', 'M', 'G'];
